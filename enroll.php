@@ -63,28 +63,28 @@
 
                     <div class="l10 input-field col s12">
                         <input id="student_name" type="text" class="validate" name="student_name" required="required">
-                        <label for="icon_prefix">姓 名</label>
+                        <label for="student_name">姓 名</label>
                     </div>
                     <div class="l10 input-field col s12 file-field">
                         <input id="student_id" type="text" class="validate" name="student_id"
                                pattern="(^1)[567](\d{6})">
-                        <label for="icon_telephone" data-error="学号不正确">学 号</label>
+                        <label for="student_id" data-error="学号不正确">学 号</label>
                     </div>
                     <div class="l10 input-field col s12">
                         <input id="phone_num" type="tel" class="validate" name="phone_num" pattern="^1\d{10}$">
-                        <label for="icon_telephone" data-error="手机号格式不正确">手机号</label>
+                        <label for="phone_num" data-error="手机号格式不正确">手机号</label>
                     </div>
                     <div class="l10 input-field col s12">
                         <input id="email" type="email" class="validate" name="email">
-                        <label for="icon_telephone">电子邮件</label>
+                        <label for="email">电子邮件</label>
                     </div>
                     <div class="l10 input-field col s12">
                         <input id="nation" type="text" class="validate" name="nation" required="required">
-                        <label for="icon_telephone">民族</label>
+                        <label for="nation">民族</label>
                     </div>
                     <div class="l10 input-field col s12">
                         <input id="qq" type="text" class="validate" name="qq" required="required">
-                        <label for="icon_telephone">QQ</label>
+                        <label for="qq">QQ</label>
                     </div>
                     <div class="l12 col s12" style="margin-bottom: 50px">
                         <div class="l2 col s2">
@@ -210,6 +210,10 @@
 <!--Import jQuery before materialize.js-->
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/materialize.min.js"></script>
+
+<script type="text/javascript">
+    $(".button-collapse").sideNav();
+</script>
 <script type="text/javascript">
     $(document).ready(function () {
         $('select').material_select();
@@ -236,6 +240,8 @@
     $(document).ready(function () {
         $("#select1 ul li").click(function () {
             var value = $(this).index();
+            value = $("#select1 select option").eq(value).val();
+            value = Number(value);
             <?php
             $sql = 'SELECT id FROM communitys';
             foreach ($dbh->query($sql) as $row) {
