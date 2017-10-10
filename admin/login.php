@@ -10,9 +10,10 @@ require_once("../include/db_info.inc.php");
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if (empty($_POST['student_id'])) {
         echo "<script language='javascript'>\n";
-        echo "alert('请输入用户名');\n";
+        echo "alert('请输入用户名!');\n";
         echo "history.go(-1);\n";
         echo "</script>";
+        exit(0);
     }
 
     $student_id = $_POST['student_id'];

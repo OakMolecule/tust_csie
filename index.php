@@ -36,7 +36,7 @@
          style="background-image: url('./img/bg201410.jpg');background-size: cover; ">
         <h2 style="font-size: 35px;text-transform: uppercase  ;">Welcome To College of Computer Science & Information
             Engineering</h2>
-        <p class="white-text" style="font-family: 微软雅黑;font-size:26px;">计算机精英协会</p>
+        <p class="white-text" style="font-family: 微软雅黑;font-size:26px;">计算机科学与信息工程学院</p>
     </div>
 
 </div>

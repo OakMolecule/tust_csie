@@ -319,12 +319,6 @@
                 ?>
             }
             $('#select2 select').material_select();
-//            $("#select2 ul li").click(function () {
-//                var value = $(this).index();
-//                $(".container .row").css("display", "none");
-//                $(".container .row").eq(0).css("display", "block");
-//                $(".container .row").eq(value).css("display", "block");
-//            })
         })
     });
 </script>
