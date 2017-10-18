@@ -99,5 +99,41 @@ CREATE TABLE `users` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `users`
+-- Dumping data for table `classroom_applications`
 --
+
+DROP TABLE IF EXISTS `classroom_applications`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `classroom_applications` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `create_time` DATETIME NOT NULL,
+  `finish_time` DATETIME NULL,
+  `delete_time` DATETIME NULL,
+  `is_worry` TINYINT(1) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `email` varchar(210) NOT NULL,
+  `phone_num` varchar(15) NOT NULL,
+  `purpose` VARCHAR(10) NOT NULL,
+  `description` VARCHAR(20) NOT NULL,
+  `time` VARCHAR(50) NOT NULL,
+  `location` VARCHAR(40) NOT NULL,
+  `token` CHAR(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `privilege`
+--
+
+DROP TABLE IF EXISTS `privilege`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+create table `privilege` (
+  `user_id` char(48) default '' not null,
+  `rightstr` char(30) default '' not null,
+  `defunct` char default 'N' not null
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+

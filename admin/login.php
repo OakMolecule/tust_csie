@@ -35,7 +35,6 @@ function check_login($student_id, $passwd)
 {
     $dbh = $GLOBALS['dbh'];
     $sql = "SELECT * FROM users WHERE student_id = '" . $student_id . "' LIMIT 1";
-//    echo $sql;
     foreach ($dbh->query($sql) as $row) {
         if ($row['password'] == $passwd) {
             return array($row['student_id'], $row['community_id']);
