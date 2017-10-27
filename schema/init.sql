@@ -1,29 +1,31 @@
 --
--- Current Database: `community_regist`
+-- Current Database: `tust_csie`
 --
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `community_regist` /*!40100 DEFAULT CHARACTER SET latin1 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS */ `tust_csie` /*!40100 DEFAULT CHARACTER SET latin1 */;
 
-USE `community_regist`;
+USE `tust_csie`;
 
 --
 -- Table structure for table `communitys`
 --
 
 DROP TABLE IF EXISTS `communitys`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET @saved_cs_client = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `communitys` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` char(20) NOT NULL,
-  `description` varchar(210) NOT NULL,
-  `information1` char(80) NOT NULL,
-  `information2` char(80) NOT NULL,
-  `information3` char(20) DEFAULT NULL,
-  `information4` char(20) DEFAULT NULL,
-  `is_take_in` tinyint(1) NOT NULL DEFAULT '0',
+  `id`           INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name`         CHAR(20)         NOT NULL,
+  `description`  VARCHAR(210)     NOT NULL,
+  `information1` CHAR(80)         NOT NULL,
+  `information2` CHAR(80)         NOT NULL,
+  `information3` CHAR(20)                  DEFAULT NULL,
+  `information4` CHAR(20)                  DEFAULT NULL,
+  `is_take_in`   TINYINT(1)       NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+)
+  ENGINE = InnoDB
+  DEFAULT CHARSET = utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -35,15 +37,17 @@ CREATE TABLE `communitys` (
 --
 
 DROP TABLE IF EXISTS `departments`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET @saved_cs_client = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `departments` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `department_name` char(30) NOT NULL,
-  `description` varchar(200) DEFAULT NULL,
-  `community_id` int(10) unsigned NOT NULL,
+  `id`              INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `department_name` CHAR(30)         NOT NULL,
+  `description`     VARCHAR(200)              DEFAULT NULL,
+  `community_id`    INT(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+)
+  ENGINE = InnoDB
+  DEFAULT CHARSET = utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -55,47 +59,52 @@ CREATE TABLE `departments` (
 --
 
 DROP TABLE IF EXISTS `register_informations`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET @saved_cs_client = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `register_informations` (
-  `user_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `student_id` char(10) NOT NULL,
-  `student_name` varchar(20) NOT NULL,
-  `phone_num` char(15) NOT NULL,
-  `qq` varchar(20) NOT NULL,
-  `email` varchar(100) DEFAULT NULL,
-  `sex` char(2) NOT NULL,
-  `nation` char(20) NOT NULL,
-  `political_status` char(20) NOT NULL,
-  `birth_date` date NOT NULL,
-  `is_adjust` tinyint(4) NOT NULL DEFAULT '0',
-  `description1` char(255) NOT NULL,
-  `description2` char(255) NOT NULL,
-  `description3` char(255) DEFAULT NULL,
-  `description4` char(255) DEFAULT NULL,
-  `department_id` int(10) unsigned NOT NULL,
-  `register_time` datetime NOT NULL,
-  `status` int(1) NOT NULL DEFAULT '0',
-  `token` char(50) NOT NULL,
+  `user_id`          INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `student_id`       CHAR(10)         NOT NULL,
+  `student_name`     VARCHAR(20)      NOT NULL,
+  `phone_num`        CHAR(15)         NOT NULL,
+  `qq`               VARCHAR(20)      NOT NULL,
+  `email`            VARCHAR(100)              DEFAULT NULL,
+  `sex`              CHAR(2)          NOT NULL,
+  `nation`           CHAR(20)         NOT NULL,
+  `political_status` CHAR(20)         NOT NULL,
+  `birth_date`       DATE             NOT NULL,
+  `is_adjust`        TINYINT(4)       NOT NULL DEFAULT '0',
+  `description1`     CHAR(255)        NOT NULL,
+  `description2`     CHAR(255)        NOT NULL,
+  `description3`     CHAR(255)                 DEFAULT NULL,
+  `description4`     CHAR(255)                 DEFAULT NULL,
+  `department_id`    INT(10) UNSIGNED NOT NULL,
+  `register_time`    DATETIME         NOT NULL,
+  `status`           INT(1)           NOT NULL DEFAULT '0',
+  `token`            CHAR(50)         NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+)
+  ENGINE = InnoDB
+  DEFAULT CHARSET = utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
 
 --
 -- Table structure for table `users`
 --
 
 DROP TABLE IF EXISTS `users`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET @saved_cs_client = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `student_id` char(20) NOT NULL,
-  `password` varchar(210) NOT NULL,
-  `community_id` int(10) unsigned NOT NULL,
+  `id`         INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `student_id` CHAR(10)         NOT NULL,
+  `name`       VARCHAR(20)      NOT NULL,
+  `phone_num`  VARCHAR(12)      NOT NULL,
+  `email`      VARCHAR(100)     NOT NULL,
+  `password`   VARCHAR(50)      NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+)
+  ENGINE = InnoDB
+  DEFAULT CHARSET = utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -103,24 +112,26 @@ CREATE TABLE `users` (
 --
 
 DROP TABLE IF EXISTS `classroom_applications`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET @saved_cs_client = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `classroom_applications` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `create_time` DATETIME NOT NULL,
-  `finish_time` DATETIME NULL,
-  `delete_time` DATETIME NULL,
-  `is_worry` TINYINT(1) NOT NULL,
-  `name` varchar(20) NOT NULL,
-  `email` varchar(210) NOT NULL,
-  `phone_num` varchar(15) NOT NULL,
-  `purpose` VARCHAR(10) NOT NULL,
-  `description` VARCHAR(20) NOT NULL,
-  `time` VARCHAR(50) NOT NULL,
-  `location` VARCHAR(40) NOT NULL,
-  `token` CHAR(50) NOT NULL,
+  `id`          INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `create_time` DATETIME         NOT NULL,
+  `finish_time` DATETIME         NULL,
+  `delete_time` DATETIME         NULL,
+  `is_worry`    TINYINT(1)       NOT NULL,
+  `name`        VARCHAR(20)      NOT NULL,
+  `email`       VARCHAR(210)     NOT NULL,
+  `phone_num`   VARCHAR(15)      NOT NULL,
+  `purpose`     VARCHAR(10)      NOT NULL,
+  `description` VARCHAR(20)      NOT NULL,
+  `time`        VARCHAR(50)      NOT NULL,
+  `location`    VARCHAR(40)      NOT NULL,
+  `token`       CHAR(50)         NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+)
+  ENGINE = InnoDB
+  DEFAULT CHARSET = utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -128,12 +139,30 @@ CREATE TABLE `classroom_applications` (
 --
 
 DROP TABLE IF EXISTS `privilege`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET @saved_cs_client = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-create table `privilege` (
-  `user_id` char(48) default '' not null,
-  `rightstr` char(30) default '' not null,
-  `defunct` char default 'N' not null
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `privilege` (
+  `user_id`       CHAR(48) DEFAULT '' NOT NULL,
+  `role_id`       CHAR(30) DEFAULT '' NOT NULL,
+  `department_id` INT(10)             NULL,
+  `defunct`       CHAR DEFAULT 'N'    NOT NULL
+)
+  ENGINE = InnoDB
+  DEFAULT CHARSET = utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Dumping data for table `roles`
+--
+
+DROP TABLE IF EXISTS `roles`;
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `roles` (
+  `id`        INT(10) UNSIGNED    NOT NULL AUTO_INCREMENT,
+  `role_name` CHAR(30) DEFAULT '' NOT NULL,
+  PRIMARY KEY (`id`)
+)
+  ENGINE = InnoDB
+  DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;

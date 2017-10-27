@@ -1,6 +1,6 @@
 <?php session_start();
 unset($_SESSION['student_id']);
-unset($_SESSION['community_id']);
+unset($_SESSION['rightstr']);
 session_destroy();
-header("Location:loginpage.php");
+header("Location:index.php");
 ?>

@@ -14,7 +14,7 @@
                 <li>
                     <div class="user-view">
                         <div class="background">
-                            <img style="width: 300px;" src="image/backgroud.jpg">
+                            <img style="width: 300px;" src="images/backgroud.jpg">
                         </div>
                         <h1 class="white-text email">社团报名</h1>
                     </div>
