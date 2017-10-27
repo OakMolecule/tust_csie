@@ -23,7 +23,7 @@ session_start();
     </nav>
     <ul id="slide-out" class="side-nav fixed">
         <?php if (!isset($_SESSION['student_id'])) {
-            // 没有登录?>
+            // 没有登录 ?>
             <li>
                 <div class="user-view">
                     <div class="background">
