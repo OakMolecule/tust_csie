@@ -17,34 +17,15 @@
 <?php
 session_start();
 require_once("../include/db_info.inc.php");
-if (!isset($_SESSION['student_id']) || !isset($_SESSION['communtiy_id'])) {
-    $view_errors = "<a href=loginpage.php>请登录后进行操作</a>";
-    echo $view_errors;
-    exit(0);
-}
-?>
-<div class="row">
-    <div class="col s3">
-        <div class="container">
-            <ul class="hide-on-med-and-down">
-                <li><a href="index.php">主页</a></li>
-                <li><a href="aboutus.php">关于我们</a></li>
-                <li><a href="setregister.php">报名情况</a></li>
-            </ul>
-        </div>
+if (!isset($_SESSION['student_id'])) { ?>
+    <div class="container">
+        <h5>你还没有登录</h5>
+        <ul>
+            <li><a href="loginpage.php"><i class="material-icons">cloud</i>登录</a></li>
+            <li><a href="registerpage.php"><i class="material-icons">lock</i>注册</a></li>
+        </ul>
     </div>
-
-    <div class="col s9">
-        <!-- Teal page content  -->
-    </div>
-</div>
-<div class="container">
-    <ul id="nav-mobile" class="center">
-        <li><a href="index.php">主页</a></li>
-        <li><a href="aboutus.php">关于我们</a></li>
-        <li><a href="setregister.php">报名情况</a></li>
-    </ul>
-</div>
+<?php } ?>
 <?php require_once 'footer.php' ?>
 
 <!--Import jQuery before materialize.js-->

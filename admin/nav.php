@@ -9,7 +9,7 @@ session_start();
                 <a class="brand-logo">Logo</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-<!--                    <li><a href="index.php">主页</a></li>-->
+                    <!--                    <li><a href="index.php">主页</a></li>-->
                 </ul>
                 <ul class="side-nav" id="mobile-demo"><?php if (!isset($_SESSION['student_id'])) {
                         // 没有登录 ?>
@@ -68,7 +68,8 @@ session_start();
                             <div class="divider"></div>
                         </li>
 
-                        <li><a href="classapplicationpage.php"><i class="material-icons">account_balance</i>教室申请信息</a></li>
+                        <li><a href="classapplicationpage.php"><i class="material-icons">account_balance</i>教室申请信息</a>
+                        </li>
                     <?php } ?>
 
                     <li>
@@ -125,7 +126,6 @@ session_start();
             <li><a href="logout.php"><i class="material-icons">exit_to_app</i>注销</a></li>
         <?php } ?>
 
-
         <?php // 查看权限信息
         $sql_roles = "SELECT * FROM privilege WHERE user_id = '$student_id'";
         $role_id = 0;               // 权限
@@ -135,7 +135,7 @@ session_start();
             $role_department_id = $row['department_id'];
         } ?>
 
-        <?php if ($role_id == 1 || $role_id == 2 || $role_id == 3) { ?>
+        <?php if (classRoomApplicationAuthority($role_id)) { ?>
             <li>
                 <div class="divider"></div>
             </li>

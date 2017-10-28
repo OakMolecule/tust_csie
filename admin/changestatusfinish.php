@@ -23,7 +23,7 @@ if (isset($_SESSION['student_id'])) {
         $role_id = $row['role_id'];
     }
 
-    if ($role_id == 1 || $role_id == 2 || $role_id == 2) {
+    if (classRoomApplicationAuthority($role_id)) {
         $id = $_POST['id'];
         $sql = "UPDATE classroom_applications SET finish_time = now() WHERE id = $id";
         try {

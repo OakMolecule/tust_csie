@@ -26,3 +26,12 @@ function getRole()
 {
 
 }
+
+function classRoomApplicationAuthority($roles = 0)
+{
+    if ($roles == 1 || $roles == 2 || $roles == 3) {
+        return true;
+    } else {
+        return false;
+    }
+}
