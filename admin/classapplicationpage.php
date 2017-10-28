@@ -18,7 +18,7 @@
 <body>
 <?php require_once('../include/db_info.inc.php') ?>
 <?php require_once('nav.php') ?>
-<?php if ($role_id == 1 || $role_id == 2) {
+<?php if ($role_id == 1 || $role_id == 2 || $role_id == 2) {
     // 权限查看
     ?>
     <main>

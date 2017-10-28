@@ -17,7 +17,12 @@ try {
     die ("Error!: " . $e->getMessage() . "<br/>");
 }
 
-function error() {
+function error()
+{
 
 }
 
+function getRole()
+{
+
+}
